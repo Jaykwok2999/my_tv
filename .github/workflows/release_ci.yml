@@ -1,11 +1,13 @@
 name: my_tv Release
 
 # action事件触发
-on:
-  push:
-    # push tag时触发
-    tags:
-      - "v*.*.*"
+on: 
+  repository_dispatch:
+  workflow_dispatch:
+
+# 定时触发编译
+#  schedule:
+#    - cron: 0 22 * * *
 
 # 可以有多个jobs
 jobs:
